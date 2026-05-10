@@ -57,6 +57,15 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 
 ```
 Your answer...
+
+Type 1 – Overwrite (no history retained) 
+In this case the CUSTOMER_ADDRESS table updates/ replaces the existing value (row) when a customer changes address. Old addresses are lost forever.
+Suggested columns: address_id (PK), customer_id (FK), street, city, province, postal_code.
+ 
+Type 2 – Keep changes (history retained) 
+In this case the CUSTOMER_ADDRESS table adds a new row each time a customer’s address changes, keeping full history. 
+It would include the same columns as Type 1, plus start_date, end_date, and is_current to track which address(es) is active and when changes occurred. 
+
 ```
 
 ***
